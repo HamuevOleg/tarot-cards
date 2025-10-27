@@ -81,6 +81,7 @@ nav {
     font-size: 32px;
     font-weight: 700;
     background: linear-gradient(45deg, #fbbf24, #d4af37, #f59e0b);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: glow 2s ease-in-out infinite;
@@ -212,6 +213,7 @@ h1 {
     font-size: 4.5rem;
     margin-bottom: 20px;
     background: linear-gradient(45deg, #fbbf24, #d4af37, #f59e0b, #fbbf24);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shimmer 3s linear infinite;
@@ -682,7 +684,7 @@ footer {
 
 .analysis-legend {
     position: absolute;
-    top: 20px;
+    top: 120px;
     right: 20px;
     background: rgba(30, 27, 75, 0.9);
     padding: 20px;
@@ -794,4 +796,72 @@ footer {
         font-size: 1rem;
         min-width: 180px;
     }
+}
+
+/* Стили для блока решений */
+.solution-node {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    min-width: 300px;
+    text-align: center;
+    z-index: 10;
+    border: 4px solid rgba(16, 185, 129, 0.5);
+    animation: solutionPulse 2s ease-in-out infinite;
+}
+
+@keyframes solutionPulse {
+    0%, 100% { box-shadow: 0 10px 40px rgba(16, 185, 129, 0.4); }
+    50% { box-shadow: 0 10px 60px rgba(16, 185, 129, 0.7); }
+}
+
+.method-node {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.8) 0%, rgba(5, 150, 105, 0.8) 100%);
+    color: #fff;
+    font-size: 0.95rem;
+    max-width: 280px;
+    border-color: rgba(16, 185, 129, 0.5);
+}
+
+.result-node {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(22, 163, 74, 0.2) 100%);
+    color: #fff;
+    font-size: 0.95rem;
+    max-width: 280px;
+    border-color: rgba(34, 197, 94, 0.5);
+    backdrop-filter: blur(15px);
+}
+
+.solution-color {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.method-color {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.8) 0%, rgba(5, 150, 105, 0.8) 100%);
+}
+
+.result-color {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(22, 163, 74, 0.2) 100%);
+}
+
+#solution-connections {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#solution-connections .connection-line {
+    stroke: rgba(16, 185, 129, 0.4);
+    stroke-width: 3;
+    fill: none;
+    stroke-dasharray: 8, 5;
+    animation: dash 30s linear infinite;
 }
