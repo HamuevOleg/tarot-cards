@@ -865,3 +865,97 @@ footer {
     stroke-dasharray: 8, 5;
     animation: dash 30s linear infinite;
 }
+
+/* Табличная секция методов */
+.info-section {
+    margin-top: 30px;
+}
+
+.table-wrapper {
+    background: rgba(30, 27, 75, 0.7);
+    border: 2px solid rgba(147, 51, 234, 0.3);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table thead th {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.6) 0%, rgba(107, 70, 193, 0.6) 100%);
+    color: #fff;
+    text-align: left;
+    padding: 18px 20px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(251, 191, 36, 0.25);
+}
+
+.data-table tbody td {
+    padding: 18px 20px;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(147, 51, 234, 0.25);
+    color: #fff;
+    font-family: 'Merriweather', serif;
+    line-height: 1.7;
+}
+
+.data-table tbody tr {
+    background: rgba(30, 27, 75, 0.6);
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.data-table tbody tr:hover {
+    background: rgba(30, 27, 75, 0.8);
+}
+
+.data-table tbody tr:hover td:first-child .method-title {
+    color: var(--accent);
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table td:first-child {
+    width: 260px;
+    font-family: 'Playfair Display', serif;
+}
+
+.method-title {
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.3px;
+}
+
+/* Адаптивность таблицы */
+@media (max-width: 992px) {
+    .data-table thead {
+        display: none;
+    }
+    .data-table, .data-table tbody, .data-table tr, .data-table td {
+        display: block;
+        width: 100%;
+    }
+    .data-table tr {
+        margin: 12px 0;
+        border-top: 1px solid rgba(147, 51, 234, 0.25);
+    }
+    .data-table td {
+        padding: 12px 16px;
+        border: none;
+        position: relative;
+    }
+    .data-table td:first-child {
+        background: rgba(147, 51, 234, 0.12);
+        border-bottom: 1px solid rgba(147, 51, 234, 0.25);
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+}
