@@ -388,6 +388,7 @@
         </div>
     </section>
     <!-- Секция диаграммы Ганта -->
+<!-- Секция диаграммы Ганта -->
 <section class="gantt-section" id="gantt">
     <div class="container">
         <h2 class="section-title">📊 Диаграмма Ганта проекта</h2>
@@ -420,6 +421,40 @@
             </div>
         </div>
 
+        <div class="team-legend">
+            <h3 style="text-align: center; margin-bottom: 20px; color: var(--accent); font-family: 'Playfair Display', serif;">👥 Команда проекта</h3>
+            <div class="team-legend-grid">
+                <div class="team-legend-item">
+                    <span class="team-badge pm">👨‍💼 Project Manager</span>
+                    <p>Планирование и контроль проекта (Хамуев Олег) </p>
+                </div>
+                <div class="team-legend-item">
+                    <span class="team-badge designer">🎨 UI/UX Designer</span>
+                    <p>Дизайн интерфейса (Степанович Никита)</p>
+                </div>
+                <div class="team-legend-item">
+                    <span class="team-badge developer">💻 Web Developers</span>
+                    <p>Разработка сайта (Степанович Никита)</p>
+                </div>
+                <div class="team-legend-item">
+                    <span class="team-badge content">📝 Content Manager</span>
+                    <p> Контент и тексты (Доду Георгий)</p>
+                </div>
+                <div class="team-legend-item">
+                    <span class="team-badge tarot">🔮 Тарологи</span>
+                    <p>Экспертный контент по таро (Згурский Дмитрий)</p>
+                </div>
+                <div class="team-legend-item">
+                    <span class="team-badge tester">🧪 QA Tester</span>
+                    <p>Тестирование качества (Дрига Даниил)</p>
+                </div>
+                <div class="team-legend-item">
+                    <span class="team-badge devops">🚀 DevOps</span>
+                    <p>Развертывание и поддержка (Степанович Никита)</p>
+                </div>
+            </div>
+        </div>
+
         <div class="gantt-wrapper">
             <div class="gantt-chart">
                 <div class="gantt-header">
@@ -430,12 +465,17 @@
                     <div class="timeline-cell week-label">Н4</div>
                     <div class="timeline-cell week-label">Н5</div>
                     <div class="timeline-cell week-label">Н6</div>
+                    <div class="timeline-cell week-label">Ответственные</div>
                 </div>
 
                 <div class="gantt-row">
                     <div class="task-name">🎯 1. Планирование проекта</div>
                     <div style="grid-column: 2 / 3;">
                         <div class="task-bar phase-planning">3 дня</div>
+                    </div>
+                    <div style="grid-column: 3 / 8;"></div>
+                    <div class="team-cell">
+                        <span class="team-badge pm">👨‍💼 Project Manager</span>
                     </div>
                 </div>
 
@@ -444,12 +484,21 @@
                     <div style="grid-column: 2 / 3;">
                         <div class="task-bar phase-design">4 дня</div>
                     </div>
+                    <div style="grid-column: 3 / 8;"></div>
+                    <div class="team-cell">
+                        <span class="team-badge designer">🎨 UI/UX Designer</span>
+                        <span class="team-badge pm">👨‍💼 Project Manager</span>
+                    </div>
                 </div>
 
                 <div class="gantt-row">
                     <div class="task-name">💻 3. Разработка</div>
                     <div style="grid-column: 2 / 5;">
                         <div class="task-bar phase-development milestone">3 нед</div>
+                    </div>
+                    <div style="grid-column: 5 / 8;"></div>
+                    <div class="team-cell">
+                        <span class="team-badge developer">💻 Web Developers</span>
                     </div>
                 </div>
 
@@ -458,75 +507,137 @@
                     <div style="grid-column: 2 / 3;">
                         <div class="task-bar phase-development">1 нед</div>
                     </div>
+                    <div style="grid-column: 3 / 8;"></div>
+                    <div class="team-cell">
+                        <span class="team-badge developer">💻 Frontend Developer</span>
+                    </div>
                 </div>
 
                 <div class="gantt-row">
                     <div class="task-name">⚡ 3.2 JavaScript + Анимации</div>
+                    <div style="grid-column: 2 / 3;"></div>
                     <div style="grid-column: 3 / 4;">
                         <div class="task-bar phase-development">1 нед</div>
+                    </div>
+                    <div style="grid-column: 4 / 8;"></div>
+                    <div class="team-cell">
+                        <span class="team-badge developer">💻 Frontend Developer</span>
                     </div>
                 </div>
 
                 <div class="gantt-row">
                     <div class="task-name">📊 3.3 Диаграммы и таблицы</div>
+                    <div style="grid-column: 2 / 4;"></div>
                     <div style="grid-column: 4 / 5;">
                         <div class="task-bar phase-development">1 нед</div>
+                    </div>
+                    <div style="grid-column: 5 / 8;"></div>
+                    <div class="team-cell">
+                        <span class="team-badge developer">💻 Frontend Developer</span>
+                        <span class="team-badge tarot">🔮 Тарологи</span>
                     </div>
                 </div>
 
                 <div class="gantt-row">
                     <div class="task-name">📝 4. Контент</div>
+                    <div style="grid-column: 2 / 3;"></div>
                     <div style="grid-column: 3 / 5;">
                         <div class="task-bar phase-content">2 нед</div>
+                    </div>
+                    <div style="grid-column: 5 / 8;"></div>
+                    <div class="team-cell">
+                        <span class="team-badge content">📝 Content Manager</span>
+                        <span class="team-badge tarot">🔮 Тарологи</span>
                     </div>
                 </div>
 
                 <div class="gantt-row">
                     <div class="task-name">📚 4.1 Тексты и описания</div>
+                    <div style="grid-column: 2 / 3;"></div>
                     <div style="grid-column: 3 / 4;">
                         <div class="task-bar phase-content">1 нед</div>
+                    </div>
+                    <div style="grid-column: 4 / 8;"></div>
+                    <div class="team-cell">
+                        <span class="team-badge content">📝 Content Manager</span>
+                        <span class="team-badge tarot">🔮 Тарологи</span>
                     </div>
                 </div>
 
                 <div class="gantt-row">
                     <div class="task-name">💬 4.2 Отзывы и анализ</div>
+                    <div style="grid-column: 2 / 4;"></div>
                     <div style="grid-column: 4 / 5;">
                         <div class="task-bar phase-content">1 нед</div>
+                    </div>
+                    <div style="grid-column: 5 / 8;"></div>
+                    <div class="team-cell">
+                        <span class="team-badge content">📝 Content Manager</span>
+                        <span class="team-badge tarot">🔮 Тарологи</span>
                     </div>
                 </div>
 
                 <div class="gantt-row">
                     <div class="task-name">🧪 5. Тестирование</div>
+                    <div style="grid-column: 2 / 5;"></div>
                     <div style="grid-column: 5 / 6;">
                         <div class="task-bar phase-testing">1 нед</div>
+                    </div>
+                    <div style="grid-column: 6 / 8;"></div>
+                    <div class="team-cell">
+                        <span class="team-badge tester">🧪 QA Tester</span>
+                        <span class="team-badge developer">💻 Web Developers</span>
                     </div>
                 </div>
 
                 <div class="gantt-row">
                     <div class="task-name">🖥️ 5.1 Кросс-браузерность</div>
+                    <div style="grid-column: 2 / 5;"></div>
                     <div style="grid-column: 5 / 6;">
                         <div class="task-bar phase-testing">3 дня</div>
+                    </div>
+                    <div style="grid-column: 6 / 8;"></div>
+                    <div class="team-cell">
+                        <span class="team-badge tester">🧪 QA Tester</span>
                     </div>
                 </div>
 
                 <div class="gantt-row">
                     <div class="task-name">📱 5.2 Адаптив + Баги</div>
+                    <div style="grid-column: 2 / 5;"></div>
                     <div style="grid-column: 5 / 6;">
                         <div class="task-bar phase-testing">4 дня</div>
+                    </div>
+                    <div style="grid-column: 6 / 8;"></div>
+                    <div class="team-cell">
+                        <span class="team-badge tester">🧪 QA Tester</span>
+                        <span class="team-badge developer">💻 Web Developers</span>
                     </div>
                 </div>
 
                 <div class="gantt-row">
                     <div class="task-name">🚀 6. Деплой и запуск</div>
+                    <div style="grid-column: 2 / 6;"></div>
                     <div style="grid-column: 6 / 7;">
                         <div class="task-bar phase-deployment milestone">1 нед</div>
+                    </div>
+                    <div style="grid-column: 7 / 8;"></div>
+                    <div class="team-cell">
+                        <span class="team-badge devops">🚀 DevOps</span>
+                        <span class="team-badge pm">👨‍💼 Project Manager</span>
                     </div>
                 </div>
 
                 <div class="gantt-row">
                     <div class="task-name">⚙️ 6.1 Хостинг + SEO</div>
+                    <div style="grid-column: 2 / 6;"></div>
                     <div style="grid-column: 6 / 7;">
                         <div class="task-bar phase-deployment">1 нед</div>
+                    </div>
+                    <div style="grid-column: 7 / 8;"></div>
+                    <div class="team-cell">
+                        <span class="team-badge devops">🚀 DevOps</span>
+                        <span class="team-badge content">📝 Content Manager</span>
                     </div>
                 </div>
             </div>
