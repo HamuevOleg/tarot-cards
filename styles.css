@@ -2300,3 +2300,213 @@ footer {
         font-size: 1.8rem;
     }
 }
+/* Стили для слайдера менторов */
+.mentor-video-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(30, 27, 75, 0.95), rgba(20, 18, 45, 0.95));
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Ширина для вертикального видео */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(147, 51, 234, 0.3);
+    aspect-ratio: 9 / 16; /* Соотношение сторон 9:16 */
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+    height: 100%;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+}
+
+.mentor-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Видео полностью помещается без обрезки */
+    background: #000;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.mentor-info {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: white;
+    z-index: 10;
+}
+
+.mentor-info h3 {
+    font-size: 2rem;
+    margin: 0 0 5px 0;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.mentor-info p {
+    font-size: 1.1rem;
+    margin: 0;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* Кнопки навигации */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(147, 51, 234, 0.8);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-btn:hover {
+    background: rgba(147, 51, 234, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: -70px; /* Кнопки вынесены за пределы видео */
+}
+
+.next-btn {
+    right: -70px;
+}
+
+/* Точки навигации */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(147, 51, 234, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    background: rgba(147, 51, 234, 0.6);
+    transform: scale(1.2);
+}
+
+.dot.active {
+    background: #9333ea;
+    transform: scale(1.3);
+}
+
+/* Декорация */
+.mentor-decoration {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.tarot-symbol {
+    font-size: 2rem;
+    color: #fbbf24;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.mentor-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--accent);
+    font-style: italic;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .slider-container {
+        max-width: 300px; /* Меньше на мобильных */
+    }
+    
+    .slider-btn {
+        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .prev-btn {
+        left: -50px;
+    }
+    
+    .next-btn {
+        right: -50px;
+    }
+    
+    .mentor-info {
+        bottom: 20px;
+        left: 20px;
+    }
+    
+    .mentor-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .mentor-info p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-container {
+        max-width: 280px;
+    }
+    
+    .prev-btn {
+        left: 5px; /* Кнопки внутри на маленьких экранах */
+    }
+    
+    .next-btn {
+        right: 5px;
+    }
+}
