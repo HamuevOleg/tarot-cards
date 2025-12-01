@@ -1550,6 +1550,130 @@
                 }
             }
         });
+        document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('sliderTrack');
+    const slides = document.querySelectorAll('.slide');
+    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.prev-btn');
+    const dots = document.querySelectorAll('.dot');
+    const sliderContainer = document.querySelector('.slider-container'); // Основной контейнер
+    
+    let currentIndex = 0;
+    let startX = 0;
+    let endX = 0;
+    let autoPlayTimer; // Переменная для таймера
+
+    // 1. Функция обновления слайдера
+    const updateSlider = (index) => {
+        // Зацикливание (если дошли до конца — идем в начало)
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+
+        currentIndex = index;
+
+        // Сдвиг трека
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Управление видео и классами
+        slides.forEach((slide, i) => {
+            const video = slide.querySelector('video');
+            
+            if (i === currentIndex) {
+                slide.classList.add('active');
+                if (video) {
+                    video.currentTime = 0;
+                    // Пытаемся запустить видео
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            console.log('Autoplay prevented');
+                        });
+                    }
+                }
+            } else {
+                slide.classList.remove('active');
+                if (video) {
+                    video.pause();
+                }
+            }
+        });
+
+        // Обновление точек
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    };
+
+    // 2. Логика автопрокрутки
+    const startAutoPlay = () => {
+        // Останавливаем предыдущий таймер, чтобы избежать наложений
+        stopAutoPlay();
+        // Устанавливаем интервал: 5000 мс = 5 секунд
+        autoPlayTimer = setInterval(() => {
+            updateSlider(currentIndex + 1);
+        }, 5000); 
+    };
+
+    const stopAutoPlay = () => {
+        clearInterval(autoPlayTimer);
+    };
+
+    // 3. Обработчики событий (клики по кнопкам)
+    // При клике мы тоже перезапускаем таймер, чтобы слайд не переключился сразу после клика
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            updateSlider(currentIndex + 1);
+            startAutoPlay(); 
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            updateSlider(currentIndex - 1);
+            startAutoPlay();
+        });
+    }
+
+    // Обработчики точек
+    dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+            const index = parseInt(e.target.dataset.index);
+            updateSlider(index);
+            startAutoPlay();
+        });
+    });
+
+    // 4. Пауза при наведении (Desktop) и касании (Mobile)
+    // Это важно, чтобы слайдер не уехал, пока пользователь смотрит видео или читает текст
+    sliderContainer.addEventListener('mouseenter', stopAutoPlay);
+    sliderContainer.addEventListener('mouseleave', startAutoPlay);
+    
+    sliderContainer.addEventListener('touchstart', (e) => {
+        stopAutoPlay();
+        startX = e.changedTouches[0].screenX;
+    }, {passive: true});
+
+    sliderContainer.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoPlay(); // Возобновляем после свайпа
+    }, {passive: true});
+
+    // Функция свайпа
+    function handleSwipe() {
+        const threshold = 50;
+        if (endX < startX - threshold) {
+            updateSlider(currentIndex + 1);
+        }
+        if (endX > startX + threshold) {
+            updateSlider(currentIndex - 1);
+        }
+    }
+
+    // Запуск при загрузке
+    updateSlider(0);
+    startAutoPlay();
+});
         </script>
 </body>
 </html>
