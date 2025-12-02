@@ -50,8 +50,9 @@
         <div class="container">
             <h2 class="section-title">🧙‍♂️ Путь Мастера Таро</h2>
             <p class="section-subtitle">Познакомьтесь с увлекательным миром Таро и процессом обучения</p>
-            
+
             <div class="education-timeline">
+                <!-- Этап 1 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-icon">1</div>
@@ -59,13 +60,15 @@
                         <p>Изучение структуры колоды, значений Старших и Младших Арканов, а также базовых техник гадания.</p>
                         <div class="card-preview">
                             <div class="card-spread">
-                                <img src="1.png" alt="Старший Аркан" class="card-animation">
-                
+                                <div class="floating-card" style="background-image: url('1.png');">
+                                    <div class="card-shine"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- Этап 2 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-icon">2</div>
@@ -74,28 +77,28 @@
                         <div class="spread-example">
                             <div class="spread-visual">
                                 <div class="spread-positions">
-    <div class="position">
-        <div class="card-animation" style="background-image: url('111.jpg');">
-            <span class="position-title">Прошлое</span>
-        </div>
-    </div>
-    <div class="position">
-        <div class="card-animation" style="background-image: url('1.png');">
-            <span class="position-title">Настоящее</span>
-        </div>
-    </div>
-    <div class="position">
-        <div class="card-animation" style="background-image: url('1.png');">
-            <span class="position-title">Будущее</span>
-        </div>
-    </div>
-</div>
+                                    <div class="position">
+                                        <div class="card-animation" style="background-image: url('111.jpg');">
+                                            <span class="position-title">Прошлое</span>
+                                        </div>
+                                    </div>
+                                    <div class="position">
+                                        <div class="card-animation" style="background-image: url('1.png');">
+                                            <span class="position-title">Настоящее</span>
+                                        </div>
+                                    </div>
+                                    <div class="position">
+                                        <div class="card-animation" style="background-image: url('1.png');">
+                                            <span class="position-title">Будущее</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- Этап 3 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-icon">3</div>
@@ -110,7 +113,8 @@
                     </div>
                 </div>
             </div>
-            
+
+            <!-- Типы карт -->
             <div class="card-types">
                 <h3>Типы карт в колоде Таро</h3>
                 <div class="types-grid">
@@ -131,17 +135,18 @@
                     </div>
                 </div>
             </div>
-            
+
+            <!-- Призыв к действию -->
             <div class="cta-education">
                 <p>Готовы начать своё путешествие в мир Таро?</p>
                 <a href="#courses" class="cta-button">Выбрать курс</a>
             </div>
         </div>
     </section>
-    
+
     <section class="mentor-video-section" id="mentor">
         <div class="container">
-            <h2 class="section-title">Наши менторы</h2>
+            <h2 class="section-title">Наша команда</h2>
             
             <div class="slider-container">
                 <div class="slider-track" id="sliderTrack">
@@ -192,13 +197,13 @@
                     <div class="slide">
                         <div class="video-container">
                             <video loop muted playsinline class="mentor-video">
-                                <source src="mentor4.mp4" type="video/mp4">
+                                <source src="gosha.mp4" type="video/mp4">
                             </video>
                             <div class="video-overlay"></div>
                         </div>
                         <div class="mentor-info">
-                            <h3>Ментор 4</h3>
-                            <p>Специалист</p>
+                            <h3>Георгий</h3>
+                            <p>Контент-креатор</p>
                         </div>
                     </div>
     
@@ -206,13 +211,13 @@
                     <div class="slide">
                         <div class="video-container">
                             <video loop muted playsinline class="mentor-video">
-                                <source src="mentor5.mp4" type="video/mp4">
+                                <source src="oleg.mp4" type="video/mp4">
                             </video>
                             <div class="video-overlay"></div>
                         </div>
                         <div class="mentor-info">
-                            <h3>Ментор 5</h3>
-                            <p>Консультант</p>
+                            <h3>Олег</h3>
+                            <p>Проджект-Менеджер</p>
                         </div>
                     </div>
                 </div>
@@ -1254,40 +1259,114 @@
         </div>
     </div>
            
-</section>       
 </section>
+    <!-- Футер -->
     <footer id="contact">
         <div class="container">
+            <!-- Декоративный элемент сверху -->
+            <div class="footer-divider">
+                <div class="divider-symbol">✦</div>
+                <div class="divider-line"></div>
+                <div class="divider-symbol">🃏</div>
+                <div class="divider-line"></div>
+                <div class="divider-symbol">✦</div>
+            </div>
+
             <div class="footer-content">
-                <div class="footer-section">
+                <!-- О нас -->
+                <div class="footer-section footer-about">
                     <h3>🃏 Отряд Шутов</h3>
-                    <p>Профессиональное обучение таро с 20-летним опытом</p>
+                    <p class="footer-description">Профессиональное обучение таро с 20-летним опытом. Мы помогаем раскрыть тайны карт и обрести мастерство в искусстве гадания.</p>
+                    <div class="footer-quote">
+                        <span class="quote-icon">"</span>
+                        <p>Карты — это зеркало души, отражающее путь к мудрости</p>
+                        <span class="quote-icon">"</span>
+                    </div>
                 </div>
-                <div class="footer-section">
+
+                <!-- Наши курсы -->
+                <div class="footer-section footer-courses">
                     <h4>Наши Курсы</h4>
-                    <ul>
-                        <li><a href="#courses">🃏 Шут - Начало Пути</a></li>
-                        <li><a href="#courses">🌙 Луна - Тайны Подсознания</a></li>
-                        <li><a href="#courses">⭐ Звезда - Мастерство</a></li>
-                        <li><a href="#courses">🌞 Солнце - Просветление</a></li>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="#courses">
+                                <span class="link-icon">🃏</span>
+                                <span>Шут - Начало Пути</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#courses">
+                                <span class="link-icon">🌙</span>
+                                <span>Луна - Тайны Подсознания</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#courses">
+                                <span class="link-icon">⭐</span>
+                                <span>Звезда - Мастерство</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <div class="footer-section">
+
+                <!-- Контакты -->
+                <div class="footer-section footer-contact">
                     <h4>Контакты</h4>
-                    <p>📧 info@otryad-shutov.md</p>
-                    <p>📞 +373 (22) 123-456</p>
-                    <div class="social-links">
-                        <a href="#">📱 Telegram</a>
-                        <a href="#">📷 Instagram</a>
-                        <a href="#">💬 WhatsApp</a>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-info">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:info@otryad-shutov.md">info@otryad-shutov.md</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-info">
+                                <span class="contact-label">Телефон</span>
+                                <a href="tel:+37322123456">+373 (22) 123-456</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-info">
+                                <span class="contact-label">Адрес</span>
+                                <span>Кишинев, Молдова</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Нижняя часть -->
             <div class="footer-bottom">
-                <p>&copy; 2025 Отряд Шутов. Все права защищены.</p>
+                <div class="footer-bottom-divider"></div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Отряд Шутов. Все права защищены.</p>
+                    <div class="footer-tags">
+                        <span class="footer-tag">Таро</span>
+                        <span class="footer-tag">Обучение</span>
+                        <span class="footer-tag">Мистика</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Декоративные элементы -->
+            <div class="footer-decoration">
+                <div class="decoration-circle"></div>
+                <div class="decoration-circle"></div>
+                <div class="decoration-circle"></div>
             </div>
         </div>
     </footer>
+
+
+
+
+
+
+
+
 
     <script src="navbar.js"></script>
     <script src="footer.js"></script>
@@ -1317,14 +1396,22 @@
         });
 
         // Параллакс эффект для плавающих карт
+        // Улучшенный параллакс эффект
         document.addEventListener('mousemove', (e) => {
             const cards = document.querySelectorAll('.card-float');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            
+            // Вычисляем центр экрана, чтобы движение шло от центра
+            const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
+            const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
+
             cards.forEach((card, index) => {
-                const speed = (index + 1) * 0.5;
-                card.style.transform = `translate(${x * speed * 20}px, ${y * speed * 20}px)`;
+                // Разная скорость для эффекта глубины (чем выше индекс, тем быстрее)
+                const depth = (index + 1) * 20;
+
+                // Используем translate3d для аппаратного ускорения (плавнее)
+                const moveX = x * depth;
+                const moveY = y * depth;
+
+                card.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
             });
         });
 
